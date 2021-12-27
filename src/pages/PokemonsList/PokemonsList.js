@@ -5,6 +5,8 @@ import api from "../../services/api";
 
 import loading from "../../assets/loading.gif";
 
+import PokemonCard from "../../components/PokemonCard";
+
 const PokemonsList = () => {
   const [isLoading, setIsloading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
@@ -14,7 +16,7 @@ const PokemonsList = () => {
     setIsloading(true);
 
     api
-      .get("/pokemon?limit=1000")
+      .get("/pokemon?limit=100")
       .then((response) => {
         const {
           data: { results },
@@ -24,6 +26,7 @@ const PokemonsList = () => {
         setIsloading(false);
       })
       .catch((error) => {
+        console.log(error);
         setError(error);
         setIsloading(false);
       });
@@ -34,7 +37,13 @@ const PokemonsList = () => {
       {isLoading && <StyledLoader src={loading} alt="...Loading" />}
       {!pokemons.length && !isLoading ? (
         <StyledButton onClick={onPressButton}>Carregar Pokemons</StyledButton>
-      ) : null}
+      ) : (
+        <PokemonList>
+          {pokemons.map((poke, index) => (
+            <PokemonCard id={index + 1} name={poke.name} />
+          ))}
+        </PokemonList>
+      )}
       {error && <StyledErrorText>{error}</StyledErrorText>}
     </StyledContainer>
   );
@@ -64,6 +73,11 @@ const StyledErrorText = styled.p`
   align-self: center;
   margin: auto;
   color: red;
+`;
+
+const PokemonList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export default PokemonsList;
