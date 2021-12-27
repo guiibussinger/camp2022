@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://ioasysjenkins.ioasys.com.br/clearfield/api/v1";
+const baseURL = "https://pokeapi.co/api/v2";
 
 const api = axios.create({
   baseURL,
