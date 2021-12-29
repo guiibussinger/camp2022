@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/camp2022/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/camp2022/static/js/main.6e48b9f8.chunk.js",
+    "main.js.map": "/camp2022/static/js/main.6e48b9f8.chunk.js.map",
+    "runtime-main.js": "/camp2022/static/js/runtime-main.2065b204.js",
+    "runtime-main.js.map": "/camp2022/static/js/runtime-main.2065b204.js.map",
+    "static/js/2.d9d89261.chunk.js": "/camp2022/static/js/2.d9d89261.chunk.js",
+    "static/js/2.d9d89261.chunk.js.map": "/camp2022/static/js/2.d9d89261.chunk.js.map",
+    "static/js/3.d42db642.chunk.js": "/camp2022/static/js/3.d42db642.chunk.js",
+    "static/js/3.d42db642.chunk.js.map": "/camp2022/static/js/3.d42db642.chunk.js.map",
+    "index.html": "/camp2022/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/camp2022/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.d9d89261.chunk.js.LICENSE.txt": "/camp2022/static/js/2.d9d89261.chunk.js.LICENSE.txt",
+    "static/media/loading.c7d9f081.gif": "/camp2022/static/media/loading.c7d9f081.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2065b204.js",
+    "static/js/2.d9d89261.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.6e48b9f8.chunk.js"
+  ]
+}
