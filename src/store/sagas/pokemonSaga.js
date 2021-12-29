@@ -12,7 +12,7 @@ function* getPokemons() {
 
     yield put(GET_POKEMONS_SUCCESS(results));
   } catch (error) {
-    yield put(GET_POKEMONS_FAILURE({ error }));
+    yield put(GET_POKEMONS_FAILURE(error));
   }
 }
 
