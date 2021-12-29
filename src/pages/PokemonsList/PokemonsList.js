@@ -1,43 +1,28 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
-import api from "../../services/api";
+import loading from '../../assets/loading.gif';
 
-import loading from "../../assets/loading.gif";
+import PokemonCard from '../../components/PokemonCard';
 
-import PokemonCard from "../../components/PokemonCard";
+import { GET_POKEMONS } from '../../store/slices/pokemonSlice';
 
 const PokemonsList = () => {
-  const [isLoading, setIsloading] = useState(false);
-  const [pokemons, setPokemons] = useState([]);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const { isLoading, pokemonList, error } = useSelector(({ pokemon }) => pokemon);
 
   const onPressButton = () => {
-    setIsloading(true);
-
-    api
-      .get("/pokemon?limit=100")
-      .then((response) => {
-        const {
-          data: { results },
-        } = response;
-        setPokemons(results);
-        setIsloading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setIsloading(false);
-      });
+    dispatch(GET_POKEMONS());
   };
 
   return (
     <StyledContainer>
-      {isLoading && <StyledLoader src={loading} alt="...Loading" />}
-      {!pokemons.length && !isLoading ? (
+      {isLoading && <StyledLoader src={loading} alt='...Loading' />}
+      {!pokemonList.length && !isLoading ? (
         <StyledButton onClick={onPressButton}>Carregar Pokemons</StyledButton>
       ) : (
         <PokemonList>
-          {pokemons.map((poke, index) => (
+          {pokemonList.map((poke, index) => (
             <PokemonCard id={index + 1} name={poke.name} />
           ))}
         </PokemonList>
