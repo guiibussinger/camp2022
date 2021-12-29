@@ -21,12 +21,10 @@ const PokemonsList = () => {
         const {
           data: { results },
         } = response;
-        console.log(response);
         setPokemons(results);
         setIsloading(false);
       })
       .catch((error) => {
-        console.log(error);
         setError(error);
         setIsloading(false);
       });
