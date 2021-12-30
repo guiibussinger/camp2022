@@ -4,13 +4,11 @@ import PokemonsList from '../pages/PokemonsList';
 
 const Router = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<PokemonsList />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path='/' element={<PokemonsList />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
