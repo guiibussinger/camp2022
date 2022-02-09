@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import Router from './services/routes';
+import NonReduxExample from './nonReduxExample';
+import ReduxExample from './reduxExample';
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -13,6 +15,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router />
+      {/* <NonReduxExample /> */}
+      {/* <ReduxExample /> */}
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
